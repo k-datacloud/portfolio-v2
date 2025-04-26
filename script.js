@@ -203,3 +203,47 @@ window.addEventListener('resize', () => {
     })
     
 })
+
+
+const scrollNumberEffect = () => {
+    const introInner = document.querySelectorAll('.intro__inner');
+    const introNumberSpan = document.querySelectorAll('.intro__number--scroll');
+    const introNumberHidden = document.querySelectorAll('.intro__number--hidden');
+
+    introInner.forEach((item, index) => {
+        const itemTop = item.getBoundingClientRect().top;
+        const stopY = 200; // 止める位置（上から200px）
+        const range = window.innerHeight - stopY;
+    
+        // 対象要素
+        const numberSpan = introNumberSpan[index];
+        const numberHidden = introNumberHidden[index];
+    
+        // 画面に入ってる場合
+        if (itemTop < window.innerHeight && itemTop >= stopY) {
+            // 進捗率 0〜1（スクロールに応じて変化）
+            const progress = (window.innerHeight - itemTop) / range;
+            const clampedProgress = Math.min(Math.max(progress, 0), 1);
+            const translateYPercent = (1 - clampedProgress) * 100;
+    
+            numberSpan.style.transform = `translateY(-${translateYPercent}%)`;
+            numberHidden.style.transform = `translateY(-${translateYPercent}%)`;
+        }
+        // stopYより上までスクロールされたら、固定位置で止める
+        else if (itemTop < stopY) {
+            numberSpan.style.transform = `translateY(-100%)`;
+            numberHidden.style.transform = `translateY(-100%)`;
+        }
+        // まだ画面に入ってない時
+        else {
+            numberSpan.style.transform = `translateY(0%)`;
+            numberHidden.style.transform = `translateY(0%)`;
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', () => {
+        scrollNumberEffect();
+    })
+})

@@ -67,6 +67,22 @@ $breakpoints: (
         }
     }
 
+    &__content-pc {
+        display: none;
+        position: relative;
+
+        @include respond-to(lg) {
+            display: block;
+            overflow: hidden;
+            width: fit-content;
+            height: fit-content;
+            
+            .flex {
+                display: flex;
+            }
+        }
+    }
+
     &__header {
         display: flex;
         align-items: center;
@@ -74,7 +90,7 @@ $breakpoints: (
         margin-bottom: 2rem;
     }
 
-    &__number-pc {
+    &__number {
         display: none;
 
         @include respond-to(lg) {
@@ -83,6 +99,18 @@ $breakpoints: (
             font-size: min(120px, 11.43vw);
             letter-spacing: -0.04em;
             text-transform: capitalize;
+
+            &--scroll {
+                transform: translateY(0);
+                will-change: transform;
+            }
+
+            &--hidden {
+                position: absolute;
+                right: 0;
+                transform: translateY(0);
+                will-change: transform;
+            }
         }
     }
 

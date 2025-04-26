@@ -825,17 +825,32 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     margin-left: auto;
   }
 }
+.intro__content-pc {
+  display: none;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .intro__content-pc {
+    display: block;
+    overflow: hidden;
+    width: fit-content;
+    height: fit-content;
+  }
+  .intro__content-pc .flex {
+    display: flex;
+  }
+}
 .intro__header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
-.intro__number-pc {
+.intro__number {
   display: none;
 }
 @media (min-width: 1024px) {
-  .intro__number-pc {
+  .intro__number {
     display: block;
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -845,6 +860,16 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     font-size: min(120px, 11.43vw);
     letter-spacing: -0.04em;
     text-transform: capitalize;
+  }
+  .intro__number--scroll {
+    transform: translateY(0);
+    will-change: transform;
+  }
+  .intro__number--hidden {
+    position: absolute;
+    right: 0;
+    transform: translateY(0);
+    will-change: transform;
   }
 }
 .intro__title {
