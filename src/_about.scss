@@ -100,7 +100,7 @@ $breakpoints: (
             letter-spacing: -0.04em;
             text-transform: capitalize;
 
-            &--scroll {
+            &--visible {
                 transform: translateY(0);
                 will-change: transform;
             }

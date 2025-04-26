@@ -207,7 +207,7 @@ window.addEventListener('resize', () => {
 
 const scrollNumberEffect = () => {
     const introInner = document.querySelectorAll('.intro__inner');
-    const introNumberSpan = document.querySelectorAll('.intro__number--scroll');
+    const introNumberSpan = document.querySelectorAll('.intro__number--visible');
     const introNumberHidden = document.querySelectorAll('.intro__number--hidden');
 
     introInner.forEach((item, index) => {

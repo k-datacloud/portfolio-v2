@@ -620,7 +620,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 .p-top-showcase__img img {
   width: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 @media (min-width: 1024px) {
   .p-top-showcase__img img {
@@ -628,7 +628,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     transition: scale 0.3s ease-in-out;
   }
   .p-top-showcase__img img:hover {
-    scale: 1.1;
+    scale: 1.04;
   }
 }
 .p-top-showcase .divider {
@@ -861,7 +861,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     letter-spacing: -0.04em;
     text-transform: capitalize;
   }
-  .intro__number--scroll {
+  .intro__number--visible {
     transform: translateY(0);
     will-change: transform;
   }
