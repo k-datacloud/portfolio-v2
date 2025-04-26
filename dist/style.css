@@ -514,9 +514,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   }
 }
 @media (min-width: 768px) and (min-width: 1024px) {
-  .p-top-showcase .p-top-showcase-list__body {
-    cursor: pointer;
-  }
   .p-top-showcase .p-top-showcase-list__body:hover .divider {
     animation: hover 1s ease-in-out forwards;
   }
@@ -625,7 +622,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 @media (min-width: 1024px) {
   .p-top-showcase__img img {
     scale: 1;
-    transition: scale 0.3s ease-in-out;
+    transition: scale 0.3s;
   }
   .p-top-showcase__img img:hover {
     scale: 1.04;
