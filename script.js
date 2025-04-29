@@ -259,6 +259,11 @@ let currentY = 0;
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    cursor.style.opacity = '1';
+});
+
+document.addEventListener('mouseout', () => {
+    cursor.style.opacity = '0';
 });
 
 const animateCursor = () => {
