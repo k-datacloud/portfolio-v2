@@ -57,19 +57,24 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 
 .cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #000000;
-    z-index: 9999;
-    pointer-events: none;
-    transform: translate(0, 0);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    will-change: transform, opacity;
+    display: none;
+
+    @include respond-to(lg) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #000000;
+        z-index: 9999;
+        pointer-events: none;
+        transform: translate(0, 0);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        will-change: transform, opacity;
+    }
 }
 
 .header {
