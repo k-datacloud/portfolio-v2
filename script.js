@@ -247,3 +247,25 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollNumberEffect();
     })
 })
+
+//cursor 
+const cursor = document.querySelector('.cursor');
+
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+const animateCursor = () => {
+    currentX += (mouseX - currentX) / 10;
+    currentY += (mouseY - currentY) / 10;
+    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
