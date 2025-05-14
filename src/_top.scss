@@ -261,6 +261,11 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     }
 
     .menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
         position: relative;
         overflow: hidden;
 
@@ -350,16 +355,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         }
     }
 
-    &__content-btm {
-        display: flex;
-        justify-content: space-between;
-
-        @include respond-to(medium) {
-            margin-top: auto;
-            padding-bottom: 40px;
-        }
-    }
-
     .flex-container {
         flex-direction: column;
         gap: calc(64/16 * 1rem);
@@ -394,6 +389,14 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
             font-weight: 300;
             font-size: min(1rem, 4vw);
             text-align: center;
+
+            @include respond-to(lg) {
+                display: none;
+            }
+        }
+
+        &--sp {
+            display: block;
 
             @include respond-to(lg) {
                 display: none;
@@ -489,13 +492,43 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         }
     }
 
-    .hero-list {
+    &__footer {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
+
+        @include respond-to(medium) {
+            margin-top: auto;
+            padding-bottom: 40px;
+        }
+    }
+
+    .hero-social-list {
+        display: none;
+        
+        @include respond-to(lg) {
+            display: flex;
+            flex-direction: column;
+            gap: calc(8/16 * 1rem);
+        }
 
         &__item {
             list-style: none;
+
+            &:nth-child(3) .hero__link {
+                gap: calc(8/16 * 1rem);
+            }
+        }
+
+        .hero__link {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            width: 8px;
+            height: auto;
         }
     }
 
@@ -728,6 +761,48 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
             justify-content: space-between;
             gap: 0;
         }
+
+        .footer-list {
+            display: none;
+
+            @include respond-to(lg) {
+                display: flex;
+                justify-content: flex-end;
+                gap: calc(16/16 * 1rem);
+                margin-top: calc(24/16 * 1rem);
+            }
+
+            &__item {
+                list-style: none;
+            }
+
+            &--sp {
+                margin: calc(24/16 * 1rem) 0 0 auto;
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+
+                gap: calc(8/16 * 1rem);
+
+
+                @include respond-to(lg) {
+                    display: none;
+                }
+
+                .footer-list__item {
+
+                    &:nth-child(3) .footer__link {
+                        gap: calc(8/16 * 1rem);
+                    }
+                }
+
+                .footer__link {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
     }
 
     &__menu {
@@ -739,6 +814,16 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 
     &__menu-btm {
         margin-top: auto;
+
+        .footer-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__item {
+                list-style: none;
+            }
+        }
     }
 
     .footer-title-group {
@@ -787,8 +872,8 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     }
 
     &__link {
-        @include inter(24, 400);
-        font-size: min(24px, 6.15vw);
+        @include inter(16, 400);
+        font-size: min(16px, 6.15vw);
         color: #ffffff;
         text-decoration: none;
         text-transform: capitalize;
@@ -797,7 +882,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         transition: opacity .2s ease-in-out;
 
         @include respond-to(lg) {
-            font-size: calc(32/16 * 1rem);
+            font-size: calc(24/16 * 1rem);
         }
 
         &--small {
@@ -814,6 +899,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
             font-size: min(32px, 8.21vw);
             color: #ffffff;
             line-height: 1.5;
+            text-transform: lowercase;
 
             @include respond-to(lg) {
                 font-size: calc(40/16 * 1rem);
@@ -822,25 +908,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 
         &:hover {
             opacity: .5;
-        }
-    }
-
-    .footer-list {
-        display: flex;
-
-        &__item {
-            list-style: none;
-        }
-
-        &--end {
-            justify-content: flex-end;
-            margin-top: calc(24/16 * 1rem);
-            gap: calc(24/16 * 1rem);
-        }
-
-        &--between {
-            justify-content: space-between;
-            align-items: center;
         }
     }
 

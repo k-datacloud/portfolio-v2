@@ -220,6 +220,11 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   letter-spacing: -0.04em;
 }
 .header .menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
   position: relative;
   overflow: hidden;
 }
@@ -306,16 +311,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     padding: 16.25rem 0 0;
   }
 }
-.hero__content-btm {
-  display: flex;
-  justify-content: space-between;
-}
-@media (min-width: 768px) {
-  .hero__content-btm {
-    margin-top: auto;
-    padding-bottom: 40px;
-  }
-}
 .hero .flex-container {
   flex-direction: column;
   gap: 4rem;
@@ -358,6 +353,14 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 @media (min-width: 1024px) {
   .hero__text--light {
+    display: none;
+  }
+}
+.hero__text--sp {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .hero__text--sp {
     display: none;
   }
 }
@@ -446,13 +449,41 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 .hero__link--block {
   display: block;
 }
-.hero .hero-list {
+.hero__footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
-.hero .hero-list__item {
+@media (min-width: 768px) {
+  .hero__footer {
+    margin-top: auto;
+    padding-bottom: 40px;
+  }
+}
+.hero .hero-social-list {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .hero .hero-social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+.hero .hero-social-list__item {
   list-style: none;
+}
+.hero .hero-social-list__item:nth-child(3) .hero__link {
+  gap: 0.5rem;
+}
+.hero .hero-social-list .hero__link {
+  display: flex;
+  justify-content: space-between;
+}
+.hero .hero-social-list img {
+  width: 8px;
+  height: auto;
 }
 .hero .button {
   display: none;
@@ -684,6 +715,40 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     gap: 0;
   }
 }
+.footer__content .footer-list {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .footer__content .footer-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+.footer__content .footer-list__item {
+  list-style: none;
+}
+.footer__content .footer-list--sp {
+  margin: 1.5rem 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .footer__content .footer-list--sp {
+    display: none;
+  }
+}
+.footer__content .footer-list--sp .footer-list__item:nth-child(3) .footer__link {
+  gap: 0.5rem;
+}
+.footer__content .footer-list--sp .footer__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 @media (min-width: 768px) {
   .footer__menu {
     padding-bottom: 2.5rem;
@@ -691,6 +756,14 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 .footer__menu-btm {
   margin-top: auto;
+}
+.footer__menu-btm .footer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__menu-btm .footer-list__item {
+  list-style: none;
 }
 .footer .footer-title-group {
   display: flex;
@@ -744,9 +817,9 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #000000;
-  font-size: min(24px, 6.15vw);
+  font-size: min(16px, 6.15vw);
   color: #ffffff;
   text-decoration: none;
   text-transform: capitalize;
@@ -756,7 +829,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 @media (min-width: 1024px) {
   .footer__link {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 .footer__link--small {
@@ -777,6 +850,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: min(32px, 8.21vw);
   color: #ffffff;
   line-height: 1.5;
+  text-transform: lowercase;
 }
 @media (min-width: 1024px) {
   .footer__link--mail {
@@ -785,21 +859,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 .footer__link:hover {
   opacity: 0.5;
-}
-.footer .footer-list {
-  display: flex;
-}
-.footer .footer-list__item {
-  list-style: none;
-}
-.footer .footer-list--end {
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-  gap: 1.5rem;
-}
-.footer .footer-list--between {
-  justify-content: space-between;
-  align-items: center;
 }
 .footer .divider {
   margin-bottom: 1.5rem;

@@ -249,28 +249,28 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 //cursor 
-const cursor = document.querySelector('.cursor');
+// const cursor = document.querySelector('.cursor');
 
-let mouseX = 0;
-let mouseY = 0;
-let currentX = 0;
-let currentY = 0;
+// let mouseX = 0;
+// let mouseY = 0;
+// let currentX = 0;
+// let currentY = 0;
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.opacity = '1';
-});
+// document.addEventListener('mousemove', (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+//     cursor.style.opacity = '1';
+// });
 
-document.addEventListener('mouseout', () => {
-    cursor.style.opacity = '0';
-});
+// document.addEventListener('mouseout', () => {
+//     cursor.style.opacity = '0';
+// });
 
-const animateCursor = () => {
-    currentX += (mouseX - currentX) / 10;
-    currentY += (mouseY - currentY) / 10;
-    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    requestAnimationFrame(animateCursor);
-}
+// const animateCursor = () => {
+//     currentX += (mouseX - currentX) / 10;
+//     currentY += (mouseY - currentY) / 10;
+//     cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+//     requestAnimationFrame(animateCursor);
+// }
 
-animateCursor();
+// animateCursor();
