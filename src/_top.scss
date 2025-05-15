@@ -478,17 +478,16 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         text-transform: capitalize;
         letter-spacing: -0.04em;
 
-        @include respond-to(lg) {
-            opacity: 1;
-            transition: opacity 0.3s;
+        &--muted {
 
-            &:hover {
-                opacity: 0.5;
+            @include respond-to(lg) {
+                opacity: 1;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    opacity: .5;
+                }
             }
-        }
-
-        &--block {
-            display: block;
         }
     }
 
@@ -510,25 +509,57 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         @include respond-to(lg) {
             display: flex;
             flex-direction: column;
-            gap: calc(8/16 * 1rem);
+            gap: calc(10/16 * 1rem);
         }
 
         &__item {
             list-style: none;
+            line-height: 1.5;
+            position: relative;
+            overflow: hidden;
 
             &:nth-child(3) .hero__link {
-                gap: calc(8/16 * 1rem);
+                gap: calc(16/16 * 1rem);
+            }
+
+            @include respond-to(lg) {
+                &:hover .arrow-icon--default {
+                    transform: translateY(-200%);
+                }
+    
+                &:hover .arrow-icon--hover {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
             }
         }
 
         .hero__link {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
-        img {
-            width: 8px;
-            height: auto;
+        .arrow-icon {
+            width: 10px;
+            height: 10px;
+            aspect-ratio: 1/1;
+
+            &--default {
+                display: block;
+                transform: translateY(0);
+                transition: transform 0.3s ease;
+                will-change: transform;
+            }
+
+            &--hover {
+                position: absolute;
+                right: 0;
+                top: 100%;
+                transform: translateY(0);
+                transition: transform 0.3s ease, top 0.3s ease;
+                will-change: transform, top;
+            }
         }
     }
 
@@ -781,7 +812,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
                 display: flex;
                 flex-direction: column;
                 width: fit-content;
-
                 gap: calc(8/16 * 1rem);
 
 

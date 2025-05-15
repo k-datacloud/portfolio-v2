@@ -438,16 +438,13 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   letter-spacing: -0.04em;
 }
 @media (min-width: 1024px) {
-  .hero__link {
+  .hero__link--muted {
     opacity: 1;
     transition: opacity 0.3s;
   }
-  .hero__link:hover {
+  .hero__link--muted:hover {
     opacity: 0.5;
   }
-}
-.hero__link--block {
-  display: block;
 }
 .hero__footer {
   width: 100%;
@@ -468,22 +465,50 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   .hero .hero-social-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.625rem;
   }
 }
 .hero .hero-social-list__item {
   list-style: none;
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
 }
 .hero .hero-social-list__item:nth-child(3) .hero__link {
-  gap: 0.5rem;
+  gap: 1rem;
+}
+@media (min-width: 1024px) {
+  .hero .hero-social-list__item:hover .arrow-icon--default {
+    transform: translateY(-200%);
+  }
+  .hero .hero-social-list__item:hover .arrow-icon--hover {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .hero .hero-social-list .hero__link {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.hero .hero-social-list img {
-  width: 8px;
-  height: auto;
+.hero .hero-social-list .arrow-icon {
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1/1;
+}
+.hero .hero-social-list .arrow-icon--default {
+  display: block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+.hero .hero-social-list .arrow-icon--hover {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transform: translateY(0);
+  transition: transform 0.3s ease, top 0.3s ease;
+  will-change: transform, top;
 }
 .hero .button {
   display: none;
