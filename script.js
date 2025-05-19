@@ -65,8 +65,8 @@ for (let index = 0; index < langSwitch.length; index++) {
 
 const menuBtn = document.querySelector('.menu-btn');
 const headerNav = document.querySelector('.header__nav');
-const menuBtnClose = document.querySelector('.menu-btn .menu-btn-label--close');
-const menuBtnOpen = document.querySelector('.menu-btn .menu-btn-label--open');
+const menuBtnClose = document.querySelector('.menu-btn .menu-btn-label--open');
+const menuBtnOpen = document.querySelector('.menu-btn .menu-btn-label--close');
 
 
 menuBtn.addEventListener('click', () => {
