@@ -277,27 +277,31 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     .menu-btn-label {
         @include inter(14, 500);
         text-transform: capitalize;
+        font-variant: normal;
         letter-spacing: -0.04em;
         display: block;
+        -webkit-font-smoothing: antialiased;
 
-        &--close {
-            transform: translateY(0);
+        &--open {
+            transform: translate3d(0, 0, 0);
             transition: transform 0.5s;
 
             &.is-active {
-                transform: translateY(-100%);
+                transform: translate3d(0, -100%, 0);
             }
         }
 
-        &--open {
+        &--close {
             color: #fc3636;
             position: absolute;
             top: 100%;
             left: 0;
-            transition: top 0.5s;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            transition: transform 0.5s;
 
             &.is-active {
-                top: 0;
+                transform: translate3d(0, -100%, 0);
             }
         }
     }

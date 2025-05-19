@@ -240,25 +240,29 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: 0.875rem;
   color: #000000;
   text-transform: capitalize;
+  font-variant: normal;
   letter-spacing: -0.04em;
   display: block;
-}
-.header .menu-btn-label--close {
-  transform: translateY(0);
-  transition: transform 0.5s;
-}
-.header .menu-btn-label--close.is-active {
-  transform: translateY(-100%);
+  -webkit-font-smoothing: antialiased;
 }
 .header .menu-btn-label--open {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s;
+}
+.header .menu-btn-label--open.is-active {
+  transform: translate3d(0, -100%, 0);
+}
+.header .menu-btn-label--close {
   color: #fc3636;
   position: absolute;
   top: 100%;
   left: 0;
-  transition: top 0.5s;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: transform 0.5s;
 }
-.header .menu-btn-label--open.is-active {
-  top: 0;
+.header .menu-btn-label--close.is-active {
+  transform: translate3d(0, -100%, 0);
 }
 .header .c-scroll-text--inactive {
   color: #000000;
