@@ -268,6 +268,8 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         margin: 0;
         position: relative;
         overflow: hidden;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
 
         @include respond-to(lg) {
             display: none;
@@ -281,6 +283,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         letter-spacing: -0.04em;
         display: block;
         -webkit-font-smoothing: antialiased;
+        will-change: transform;
 
         &--open {
             transform: translate3d(0, 0, 0);
