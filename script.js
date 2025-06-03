@@ -247,30 +247,33 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollNumberEffect();
     })
 })
+ 
+const cursor = document.querySelector('.cursor');
 
-//cursor 
-// const cursor = document.querySelector('.cursor');
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
 
-// let mouseX = 0;
-// let mouseY = 0;
-// let currentX = 0;
-// let currentY = 0;
+document.querySelectorAll('.p-top-showcase__img').forEach((item, ) => {
+    item.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.clipPath = 'circle(50% at 50% 50%)';
+    });
+})
 
-// document.addEventListener('mousemove', (e) => {
-//     mouseX = e.clientX;
-//     mouseY = e.clientY;
-//     cursor.style.opacity = '1';
-// });
+document.querySelectorAll('.p-top-showcase__img').forEach((item) => {
+    item.addEventListener('mouseleave', () => {
+        cursor.style.clipPath = 'circle(0% at 50% 50%)';
+    });
+})
 
-// document.addEventListener('mouseout', () => {
-//     cursor.style.opacity = '0';
-// });
+const animateCursor = () => {
+    currentX += (mouseX - currentX) / 10;
+    currentY += (mouseY - currentY) / 10;
+    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    requestAnimationFrame(animateCursor);
+}
 
-// const animateCursor = () => {
-//     currentX += (mouseX - currentX) / 10;
-//     currentY += (mouseY - currentY) / 10;
-//     cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
-//     requestAnimationFrame(animateCursor);
-// }
-
-// animateCursor();
+animateCursor();
