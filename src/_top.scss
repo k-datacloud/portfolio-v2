@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     &__content-main {
         width: 100%;
         margin: 0 auto;
-        max-width: 1280px;
+        max-width: 1440px;
         padding: calc(124/16 * 1rem) 0 calc(80/16 * 1rem);
         display: flex;
         flex-direction: column;
@@ -368,7 +368,8 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         }
 
         @include respond-to(lg) {
-            padding: calc(260/16 * 1rem) 0 0;
+            height: calc(100% - 125px);
+            padding: calc(96/16 * 1rem) 0 0;
         }
     }
 
@@ -385,7 +386,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 
     &__title {
         @include inter(48, 500);
-        text-transform: capitalize;
         letter-spacing: -0.04em;
         text-align: center;
         font-size: min(48px, 12vw);
@@ -399,7 +399,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 
     &__text {
         @include inter(14, 400);
-        text-transform: capitalize;
         letter-spacing: -0.04em;
 
         &--light {
@@ -492,7 +491,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     &__link {
         @include inter(14, 400);
         text-decoration: none;
-        text-transform: capitalize;
         letter-spacing: -0.04em;
 
         &--muted {
@@ -516,7 +514,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 
         @include respond-to(medium) {
             margin-top: auto;
-            padding-bottom: 40px;
+            padding-bottom: 28px;
         }
     }
 
@@ -733,7 +731,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
     &__link {
         @include inter(14, 400);
         text-decoration: none;
-        text-transform: capitalize;
         letter-spacing: -0.04em;
 
         @include respond-to(medium) {
@@ -909,7 +906,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         &--small {
             @include inter(12, 400);
             color: #ffffff;
-            text-transform: capitalize;
             letter-spacing: -0.04em;
 
             @include respond-to(lg) {
@@ -923,7 +919,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
         font-size: min(16px, 6.15vw);
         color: #ffffff;
         text-decoration: none;
-        text-transform: capitalize;
         letter-spacing: -0.04em;
         opacity: 1;
         transition: opacity .2s ease-in-out;

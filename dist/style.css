@@ -312,7 +312,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 .hero__content-main {
   width: 100%;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1440px;
   padding: 7.75rem 0 5rem;
   display: flex;
   flex-direction: column;
@@ -328,7 +328,8 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 @media (min-width: 1024px) {
   .hero__content-main {
-    padding: 16.25rem 0 0;
+    height: calc(100% - 125px);
+    padding: 6rem 0 0;
   }
 }
 .hero .flex-container {
@@ -346,7 +347,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-weight: 500;
   font-size: 3rem;
   color: #000000;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
   text-align: center;
   font-size: min(48px, 12vw);
@@ -363,7 +363,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-weight: 400;
   font-size: 0.875rem;
   color: #000000;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
 }
 .hero__text--light {
@@ -454,7 +453,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: 0.875rem;
   color: #000000;
   text-decoration: none;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
 }
 @media (min-width: 1024px) {
@@ -475,7 +473,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 @media (min-width: 768px) {
   .hero__footer {
     margin-top: auto;
-    padding-bottom: 40px;
+    padding-bottom: 28px;
   }
 }
 .hero .hero-social-list {
@@ -685,7 +683,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: 0.875rem;
   color: #000000;
   text-decoration: none;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
 }
 @media (min-width: 768px) {
@@ -850,7 +847,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: 0.75rem;
   color: #000000;
   color: #ffffff;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
 }
 @media (min-width: 1024px) {
@@ -867,7 +863,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: min(16px, 6.15vw);
   color: #ffffff;
   text-decoration: none;
-  text-transform: capitalize;
   letter-spacing: -0.04em;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
@@ -936,8 +931,9 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 @media (min-width: 1024px) {
   .intro__inner {
+    width: 100%;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
 }
@@ -945,7 +941,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   .intro__content {
     grid-column-start: 2;
     max-width: 700px;
-    margin-left: auto;
+    margin-right: auto;
   }
 }
 .intro__content-pc {
