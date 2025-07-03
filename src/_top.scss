@@ -720,7 +720,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
                 display: block;
                 @include inter(18, 300);
                 margin-bottom: calc(64/16 * 1rem);
-                text-transform: capitalize;
                 letter-spacing: -0.04em;
                 line-height: 1.7;
             }
