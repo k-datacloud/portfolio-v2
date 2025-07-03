@@ -996,7 +996,6 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
   font-size: 2rem;
   color: #000000;
   letter-spacing: -0.04em;
-  text-transform: capitalize;
 }
 @media (min-width: 1024px) {
   .intro__title {

@@ -118,7 +118,6 @@ $breakpoints: (
     &__title {
         @include inter(32, 400);
         letter-spacing: -0.04em;
-        text-transform: capitalize;
 
         @include respond-to(lg) {
             font-size: calc(40/16 * 1rem);
