@@ -1093,6 +1093,7 @@ h1, h2, h3, h4, h5, h6, section, header, footer, article, nav, div, ul, li, p, a
 }
 .p-single-showcase__wrapper {
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 11.25rem 20px 10rem;
 }

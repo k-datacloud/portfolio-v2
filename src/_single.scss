@@ -36,6 +36,7 @@ $breakpoints: (
 
     &__wrapper {
         width: 100%;
+        max-width: 1440px;
         margin: 0 auto;
         padding: calc(180/16 * 1rem) 20px calc(160/16 * 1rem);
 
